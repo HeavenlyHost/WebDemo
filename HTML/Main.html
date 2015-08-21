@@ -5,14 +5,16 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Bootstrap 101 Template</title>		
+		<title>WebDemo - OkSystems</title>		
 
 		 <!-- Bootstrap -->
-    	<link href="file:///C:/Users/kpspr/Documents/GitHub/WebDemo/Utils/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
-    	<link href="file:///C:/Users/kpspr/Documents/GitHub/WebDemo/CSS/defaults.css" rel="stylesheet">
+    	<link href="../Utils/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+    	<link href="../CSS/defaults.css" rel="stylesheet">
+		<script src="../Utils/angular-1.4.x-dist\angular.min.js"></script>
+		<script src="../JS/angular-route.min.js"></script>				
 	</head>
 	
-	<body class="bs-docs-home">						
+	<body data-ng-app="webDemo" class="bs-docs-home">						
 		<header class="navbar navbar-default navbar-static-top bs-docs-nav" id="top" role="banner">
 			<div class="container">
 				<div class="navbar-header">						
@@ -45,8 +47,7 @@
 								<li role="separator" class="divider"></li>
 								<li><a href="./Main_files/Main.html">One more separated link</a></li>
 							</ul>
-							</li>
-
+						</li>
 						<li>
 							<a href="./Main_files/Main.html">Users</a>
 						</li>
@@ -78,7 +79,7 @@
 			
 			<div class="row">				
 				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="panel panel-default">
+					<div class="panel panel-default" data-ng-controller="loginDetails">
 						<div class="panel-heading">
 							<h3 class="panel-title">Panel 1</h3>							
 						</div>
@@ -88,19 +89,50 @@
 									<div class="form-group">
 										<label for="ipFirstName" class="col-sm-2 control-label">First Name</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control" id="ipFirstName" placeholder="enter first name">
+											<input type="text" class="form-control" id="ipFirstName" placeholder="enter first name" data-ng-model="firstName"/>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="ipLastName" class="col-sm-2 control-label" >Last Name</label>
+										<label for="ipLastName" class="col-sm-2 control-label">Last Name</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control" id="ipLastName" placeholder="enter last name">
+											<input type="text" class="form-control" id="ipLastName" placeholder="enter last name" data-ng-model="lastName"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="ipFirstNameCopy" class="col-sm-2 control-label">First Name (Copy)</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="ipFirstNameCopy" placeholder="enter first name" data-ng-model="firstName"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="ipLastNameCopy" class="col-sm-2 control-label">First Name (Copy)</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="ipFirstNameCopy" placeholder="enter last name" data-ng-model="lastName"/>
 										</div>
 									</div>
 								</form>
 							</div>
 						</div>
 					</div> 	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Options</h3>							
+						</div>
+						<div class="panel-body">							
+							<button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+								<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+								Load 1
+							</button>
+							<button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+								<span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+								Load 2
+							</button>
+							<button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+								<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+								Load 3
+							</button>
+						</div>						
+					</div>
 				</div>				
 
 				<div class="col-xs-12 col-sm-6 col-md-6">
@@ -109,7 +141,7 @@
 							<h3 class="panel-title">Panel 2</h3>							
 						</div>
 						<div class="panel-body">
-							<p>This is a second message !!!</p>
+							<p>Hello Jessica</p>
 							<button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
 								<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								Click Me !
@@ -130,6 +162,9 @@
 								<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 								Click Me !
 							</button>
+							<a href="#adduser">Add User</a>
+							<a href="#showusers">Show Users</a>
+							<div ng-view></div>
 						</div>
 					</div>
 				</div>
@@ -140,6 +175,7 @@
 		<script src="./Main_files/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="./Main_files/bootstrap.min.js"></script>
-				
+		<!-- Include modules for angular stuff -->
+		<script src="../JS/app.js"></script>
 	
 </body></html>
